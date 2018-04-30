@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.saedf.app7learn">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,15 +14,16 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".NewsActivity" />
-        <activity android:name=".FragmentActivity"></activity>
-        <activity android:name=".BotickActivity">
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".BotickActivity"></activity>
+        <activity android:name=".WeatherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".AppWeatherActivity"></activity>
     </application>
 
 </manifest>
