@@ -102,6 +102,16 @@
             android:layout_marginRight="@dimen/standard_margin_x2"
             android:layout_marginTop="@dimen/standard_margin_x2"
             android:textColor="@android:color/black"/>
+        <TextView
+            android:id="@+id/tv_appWeatherActivity_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="نام"
+            android:textSize="@dimen/large_font_size"
+            android:layout_marginRight="@dimen/standard_margin_x2"
+            android:layout_marginTop="@dimen/standard_margin_x2"
+            android:textColor="@android:color/black"/>
+
 
 
 
