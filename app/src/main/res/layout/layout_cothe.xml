@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/standard_margin">
+
+    <ImageView
+        android:id="@+id/iv_layoutclothe_imageClothe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/pic1_clothes" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_layoutclothe_imageClothe"
+        android:padding="@dimen/standard_margin">
+
+        <TextView
+            android:id="@+id/tv_layoutClothe_titleClothe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/standard_margin"
+            android:fontFamily="@font/iranian_sans"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/large_font_size"
+            tools:text="عنوان لباس" />
+
+        <TextView
+            android:id="@+id/tv_layoutClothe_viewCountClothe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_layoutClothe_titleClothe"
+            android:layout_marginRight="@dimen/standard_margin"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/normal_font_size"
+            tools:text="750" />
+
+        <ImageView
+            android:id="@+id/iv_layoutclothe_imageViewCountClothe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_layoutClothe_viewCountClothe"
+            android:layout_alignTop="@id/tv_layoutClothe_viewCountClothe"
+            android:layout_toLeftOf="@id/tv_layoutClothe_viewCountClothe"
+            android:src="@drawable/ic_action_ic_views_white"
+            android:layout_marginRight="4dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

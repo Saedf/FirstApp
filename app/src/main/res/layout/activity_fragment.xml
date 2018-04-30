@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentActivity">
+    <fragment
+        android:id="@+id/sample_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.example.saedf.app7learn.fragment.SampleFragment"/>
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_fragmentactivity_replacefragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Replace Fragment"/>
+    <Button
+        android:id="@+id/btn_fragmentactivity_removefragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_fragmentactivity_replacefragment"
+        android:text="Remove Fragment"/>
+    <Button
+        android:id="@+id/btn_fragmentactivity_showDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_fragmentactivity_removefragment"
+        android:text="Show Dialog"
+        />
+
+</RelativeLayout>
