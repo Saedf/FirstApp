@@ -62,14 +62,15 @@ public class AppWeatherActivity extends AppCompatActivity implements ApiService.
         if (weatherInfo!=null){
             tvWeatherMain.setText(weatherInfo.getWeatherMain());
             tvWeatherDescription.setText(weatherInfo.getWeatherDescription());
-            tvTemp.setText((int) weatherInfo.getWeatherTemprature());
-            tvHumidity.setText((int) weatherInfo.getHumidity());
-            tvPressure.setText(weatherInfo.getPressure());
-            tvMinTemp.setText((int) weatherInfo.getMinTemprature());
-            tvMaxTemp.setText((int) weatherInfo.getMaxTemprature());
-            tvWindSpeed.setText((int) weatherInfo.getWindSpeed());
-            tvWindDegree.setText((int) weatherInfo.getWindDegree());
+            tvTemp.setText((String.valueOf(weatherInfo.getWeatherTemprature())));
+            tvHumidity.setText(String.valueOf(weatherInfo.getHumidity()));
+            tvPressure.setText(String.valueOf(weatherInfo.getPressure()));
+            tvMinTemp.setText((String.valueOf(weatherInfo.getMinTemprature())));
+            tvMaxTemp.setText(String.valueOf(weatherInfo.getMaxTemprature()) );
+            tvWindSpeed.setText(String.valueOf(weatherInfo.getMaxTemprature()));
+            tvWindDegree.setText(String.valueOf(weatherInfo.getWindDegree()));
             tvName.setText(weatherInfo.getName());
+            progressBar.setVisibility(View.INVISIBLE);
         }
         else {
             Toast.makeText(this, "خطا در دریافت اطلاعات", Toast.LENGTH_SHORT).show();

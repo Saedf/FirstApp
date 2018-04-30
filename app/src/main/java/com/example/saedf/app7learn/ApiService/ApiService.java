@@ -45,19 +45,25 @@ public class ApiService {
     private WeatherInfo parseResponseToWeatherInfo(JSONObject response) {
         WeatherInfo weatherInfo = new WeatherInfo();
         try {
+
             JSONArray jsonArrayWeather = response.getJSONArray("weather");
             JSONObject jsonObjectweather = jsonArrayWeather.getJSONObject(0);
             weatherInfo.setWeatherMain(jsonObjectweather.getString("main"));
             weatherInfo.setWeatherDescription(jsonObjectweather.getString("description"));
-            weatherInfo.setWeatherTemprature((float) jsonObjectweather.getDouble("temp"));
-            weatherInfo.setHumidity((float) jsonObjectweather.getDouble("humidity"));
-            weatherInfo.setPressure((int) jsonObjectweather.getDouble("pressure"));
-            weatherInfo.setMinTemprature((float) jsonObjectweather.getDouble("temp_min"));
-            weatherInfo.setMaxTemprature((float) jsonObjectweather.getDouble("temp_max"));
-            weatherInfo.setWindSpeed((float) jsonObjectweather.getDouble("speed"));
-            weatherInfo.setWindDegree((float) jsonObjectweather.getDouble("deg"));
-            weatherInfo.setName(jsonObjectweather.getString("name"));
-            return weatherInfo;
+
+            JSONObject jsonObjectMain=response.getJSONObject("main");
+            weatherInfo.setWeatherTemprature((float) jsonObjectMain.getDouble("temp"));
+            weatherInfo.setHumidity((float) jsonObjectMain.getDouble("humidity"));
+            weatherInfo.setPressure((int) jsonObjectMain.getDouble("pressure"));
+            weatherInfo.setMinTemprature((float) jsonObjectMain.getDouble("temp_min"));
+            weatherInfo.setMaxTemprature((float) jsonObjectMain.getDouble("temp_max"));
+
+            JSONObject jsonObjectWind=response.getJSONObject("wind");
+            weatherInfo.setWindSpeed((float) jsonObjectWind.getDouble("speed"));
+            weatherInfo.setWindDegree((float) jsonObjectWind.getDouble("deg"));
+
+            weatherInfo.setName(" وضعیت آب و هوای استان:  "+ response.getString("name"));
+           return weatherInfo;
         } catch (JSONException e) {
             e.printStackTrace();
             return null;
