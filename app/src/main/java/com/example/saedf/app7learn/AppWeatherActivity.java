@@ -36,7 +36,7 @@ public class AppWeatherActivity extends AppCompatActivity implements ApiService.
         btnSendReqest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                apiService.getCurrentWeather(AppWeatherActivity.this,"Tehran");
+                apiService.getCurrentWeather(AppWeatherActivity.this,"Arak");
                 progressBar.setVisibility(View.VISIBLE);
             }
         });
