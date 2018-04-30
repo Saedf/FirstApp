@@ -15,11 +15,12 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".BotickActivity"></activity>
-        <activity android:name=".WeatherActivity">
+        <activity android:name=".BotickActivity" />
+        <activity android:name=".WeatherActivity"></activity>
+        <activity android:name=".AppWeatherActivity">
 
         </activity>
-        <activity android:name=".AppWeatherActivity">
+        <activity android:name=".PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
