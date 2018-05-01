@@ -1,7 +1,7 @@
 package com.example.saedf.app7learn;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -9,19 +9,45 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.saedf.app7learn.dataModel.User;
+import com.example.saedf.app7learn.sharedPreferences.UserSharedPrefManager;
+
+
 public class ProfileActivity extends AppCompatActivity {
+    private EditText txtFirstName;
+    private EditText txtLastName;
+    private CheckBox chkIsJavaExpert;
+    private CheckBox chkIsCssExpert;
+    private CheckBox chkIsHtmlExpert;
+    private RadioButton rdbMale;
+    private RadioButton rdbFemale;
+    private ImageButton imgbtnBack;
+    private User user = new User();
+    ;
+    private UserSharedPrefManager userSharedPrefManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        initView();
+        userSharedPrefManager = new UserSharedPrefManager(this);
+        getinfoUser();
 
-        EditText editTextFirstName=findViewById(R.id.editText_profileActivity_firstname);
-        EditText editTextLastName=findViewById(R.id.editText_profileActivity_Lastname);
 
-        editTextFirstName.addTextChangedListener(new TextWatcher() {
+        imgbtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
+
+        txtFirstName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -29,7 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                user.setFirstName(charSequence.toString());
             }
 
             @Override
@@ -37,7 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        editTextLastName.addTextChangedListener(new TextWatcher() {
+        txtLastName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -45,7 +71,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+                user.setLastname(charSequence.toString());
             }
 
             @Override
@@ -53,34 +79,77 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        CheckBox chkIsJava=findViewById(R.id.checkbox_profileactivity_isJava);
-        CheckBox chkIsCSS=findViewById(R.id.checkbox_profileactivity_isCSS);
-        CheckBox chkIsHtml=findViewById(R.id.checkbox_profileactivity_isHTML);
 
-        chkIsJava.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        chkIsJavaExpert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                user.setJavaExpert(b);
+            }
+        });
+        chkIsCssExpert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                user.setCSSExpert(b);
 
             }
         });
-        chkIsCSS.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        chkIsHtmlExpert.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                user.setHtmlExpert(b);
 
             }
         });
-        chkIsHtml.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+        rdbMale.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
+                if (rdbMale.isChecked()) {
+                    user.setGender(User.MALE);
+                } else {
+                    user.setGender(User.FEMALE);
+                }
             }
         });
-        Button btnSabtInfo=findViewById(R.id.btn_profileAcivity_sabtInfo);
+
+        Button btnSabtInfo = findViewById(R.id.btn_profileAcivity_sabtInfo);
         btnSabtInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                userSharedPrefManager.savedUserInfo(user);
+                Toast.makeText(ProfileActivity.this, "اطلاعات با موفقیت ثبت شد!", Toast.LENGTH_SHORT).show();
+
 
             }
         });
+
+    }
+
+    private void getinfoUser() {
+        user = userSharedPrefManager.getUser();
+        txtFirstName.setText(user.getFirstName());
+        txtLastName.setText(user.getLastname());
+        chkIsHtmlExpert.setChecked(user.isHtmlExpert());
+        chkIsCssExpert.setChecked(user.isCSSExpert());
+        chkIsJavaExpert.setChecked(user.isJavaExpert());
+        byte gender=user.getGender();
+        if (gender==User.MALE){
+            rdbMale.isChecked();
+        }
+        else {
+            rdbFemale.isChecked();
+        }
+    }
+
+    private void initView() {
+        txtFirstName = findViewById(R.id.editText_profileActivity_firstname);
+        txtLastName = findViewById(R.id.editText_profileActivity_Lastname);
+        chkIsJavaExpert = findViewById(R.id.checkbox_profileactivity_isJava);
+        chkIsCssExpert = findViewById(R.id.checkbox_profileactivity_isCSS);
+        chkIsHtmlExpert = findViewById(R.id.checkbox_profileactivity_isHTML);
+        imgbtnBack = findViewById(R.id.imgbtn_profileActivity_buttonBack);
+        rdbFemale = findViewById(R.id.rdb_profielActivity_female);
+        rdbMale = findViewById(R.id.rdb_profielActivity_male);
     }
 }
