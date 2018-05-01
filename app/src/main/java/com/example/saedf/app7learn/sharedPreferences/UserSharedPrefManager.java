@@ -34,5 +34,16 @@ public class UserSharedPrefManager {
 
         }
     }
+    public User getUser(){
+        User user=new User();
+        user.setFirstName(sharedPreferences.getString(KEY_FIRST_NAME,""));
+        user.setLastname(sharedPreferences.getString(KEY_LAST_NAME,""));
+        user.setHtmlExpert(sharedPreferences.getBoolean(KEY_HTML,false));
+        user.setCSSExpert(sharedPreferences.getBoolean(KEY_CSS,false));
+        user.setJavaExpert(sharedPreferences.getBoolean(KEY_JAVA,false));
+        user.setGender((byte) sharedPreferences.getInt(KEY_GENDER,User.MALE));
+        return user;
+    }
+
 
 }
