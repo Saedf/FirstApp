@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewPostActivity">
+
+    <ImageView
+        android:id="@+id/iv_viewpostActivity_imagepost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/pic1" />
+
+    <TextView
+        android:id="@+id/tv_viewpostActivity_titlepost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:textColor="@android:color/black"
+        tools:text="Supreme Leader of the Islamic" />
+
+    <TextView
+        android:id="@+id/tv_viewpostActivity_contentpost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin"
+        android:layout_marginTop="@dimen/standard_margin"
+        tools:text="Two Israeli fighter jets struck the T4 military base in Central Syria from the Lebanese airspace on April 8, killing and wounding over a dozen militaries, including seven Iranian military advisers. Israeli F-15 warplanes fired eight guided missiles, but Syrian air defense units shot down five before they could hit the air base. Three of the missiles reached the Western part of the military airport.\r\nThe incident came two months after an Israeli F-16 fighter crashed after Syria responded with anti-aircraft fire to Israel's operation in its territory. Damacus said its military base came under Israeli fire, and it hit multiple aircraft in response." />
+
+    <TextView
+        android:id="@+id/tv_viewpostActivity_datepost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/standard_margin_x2"
+        android:layout_marginTop="@dimen/standard_margin"
+        tools:text="2 ساعت پیش" />
+
+</LinearLayout>

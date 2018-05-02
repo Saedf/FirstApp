@@ -23,6 +23,7 @@ import java.util.List;
 public class ApiService {
     private Context context;
     private static final String TAG = "ApiService";
+    private static final String URL_ADDRESS = "http://192.168.1.102:8080/7learn/getNewsPost.php";
 
     public ApiService(Context context) {
         this.context = context;
@@ -83,7 +84,7 @@ public class ApiService {
 
     public void getPosts(final OnRecivedNews onRecivedNews) {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
-                "http://172.20.200.45:8012/7learn/getposts.php", null,
+                URL_ADDRESS, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -92,10 +93,11 @@ public class ApiService {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                Log.e(TAG, "onErrorResponse: "+error.toString() );
 
             }
         });
-        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(800,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(800, DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         Volley.newRequestQueue(context).add(jsonArrayRequest);
 
