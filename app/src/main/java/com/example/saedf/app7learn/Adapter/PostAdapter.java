@@ -18,6 +18,7 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     private Context context;
     private List<Post> postList;
+    private static final String IP_ADDRESS_SERVER = "192.168.1.102";
 
     public PostAdapter(Context context, List<Post> postList) {
         this.context = context;
@@ -27,17 +28,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     @NonNull
     @Override
     public PostViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.item_post,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
         return new PostViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PostViewHolder holder, int position) {
-        Post post=postList.get(position);
+        Post post = postList.get(position);
         holder.tvTitlePost.setText(post.getTitle());
         holder.tvContentPost.setText(post.getContent());
         holder.tvDatePost.setText(post.getDate());
-        Picasso.with(context).load(post.getImagenewsUrl().replace("localhost","172.20.200.45"))
+        Picasso.with(context).load(post.getImagenewsUrl().replace("localhost", IP_ADDRESS_SERVER))
                 .into(holder.ivImagePost);
 
 
@@ -48,17 +49,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return postList.size();
     }
 
-    public class PostViewHolder extends RecyclerView.ViewHolder{
+    public class PostViewHolder extends RecyclerView.ViewHolder {
         private ImageView ivImagePost;
         private TextView tvTitlePost;
         private TextView tvContentPost;
         private TextView tvDatePost;
+
         public PostViewHolder(View itemView) {
             super(itemView);
-            ivImagePost=itemView.findViewById(R.id.iv_itempost_imagepost);
-            tvTitlePost=itemView.findViewById(R.id.tv_itempost_titlepost);
-            tvContentPost=itemView.findViewById(R.id.tv_itempost_contentpost);
-            tvDatePost=itemView.findViewById(R.id.tv_itempost_datepost);
+            ivImagePost = itemView.findViewById(R.id.iv_itempost_imagepost);
+            tvTitlePost = itemView.findViewById(R.id.tv_itempost_titlepost);
+            tvContentPost = itemView.findViewById(R.id.tv_itempost_contentpost);
+            tvDatePost = itemView.findViewById(R.id.tv_itempost_datepost);
         }
     }
 }
