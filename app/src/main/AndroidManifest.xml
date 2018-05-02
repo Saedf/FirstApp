@@ -12,16 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".ProfileActivity" >
-
-        </activity>
+        <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".NewsActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".BotickActivity" />
-        <activity android:name=".WeatherActivity"></activity>
-        <activity android:name=".AppWeatherActivity">
-
-        </activity>
+        <activity android:name=".WeatherActivity" />
+        <activity android:name=".AppWeatherActivity"></activity>
         <activity android:name=".PostActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ViewPostActivity"></activity>
     </application>
 
 </manifest>
