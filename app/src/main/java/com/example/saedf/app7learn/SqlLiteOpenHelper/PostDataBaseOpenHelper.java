@@ -18,7 +18,7 @@ public class PostDataBaseOpenHelper extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "db_post";
     private static final int DATABASE_VERSION = 1;
-    private static final String POST_TABLE_NAME = "tbl_postNews";
+    public static final String POST_TABLE_NAME = "tbl_postNews";
     public static final String COL_ID = "col_id";
     public static final String COL_TITLE = "col_title";
     public static final String COL_CONTENT = "col_content";
