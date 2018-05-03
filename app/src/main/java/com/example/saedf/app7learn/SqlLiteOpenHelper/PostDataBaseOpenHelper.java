@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.saedf.app7learn.AsycnchronisProcessing.AddPostTask;
 import com.example.saedf.app7learn.dataModel.Post;
 
 import java.util.ArrayList;
@@ -74,6 +75,11 @@ public class PostDataBaseOpenHelper extends SQLiteOpenHelper {
                 addPostToDB(postList.get(i));
             }
         }
+    }
+    public void addPostToDBWithAsyncTask(List<Post> postList){
+        AddPostTask addPostTask=new AddPostTask(context,postList,this);
+        addPostTask.execute();
+
     }
     private boolean checkPostExists(int postId){
         SQLiteDatabase sqLiteDatabase=this.getReadableDatabase();
