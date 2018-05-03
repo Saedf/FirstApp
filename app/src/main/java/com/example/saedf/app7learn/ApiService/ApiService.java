@@ -84,7 +84,7 @@ public class ApiService {
 
     public void getPosts(final OnRecivedNews onRecivedNews) {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
-                URL_ADDRESS, null,
+                "http://192.168.1.102:8080/7learn/getNewsPost.php", null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
