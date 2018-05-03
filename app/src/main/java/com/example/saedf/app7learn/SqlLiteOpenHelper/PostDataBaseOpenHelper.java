@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.saedf.app7learn.AsycnchronisProcessing.AddPostTask;
 import com.example.saedf.app7learn.dataModel.Post;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class PostDataBaseOpenHelper extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "db_post";
     private static final int DATABASE_VERSION = 1;
-    private static final String POST_TABLE_NAME = "tbl_postNews";
+    public static final String POST_TABLE_NAME = "tbl_postNews";
     public static final String COL_ID = "col_id";
     public static final String COL_TITLE = "col_title";
     public static final String COL_CONTENT = "col_content";
@@ -74,6 +75,11 @@ public class PostDataBaseOpenHelper extends SQLiteOpenHelper {
                 addPostToDB(postList.get(i));
             }
         }
+    }
+    public void addPostToDBWithAsyncTask(List<Post> postList){
+        AddPostTask addPostTask=new AddPostTask(context,postList,this);
+        addPostTask.execute();
+
     }
     private boolean checkPostExists(int postId){
         SQLiteDatabase sqLiteDatabase=this.getReadableDatabase();
