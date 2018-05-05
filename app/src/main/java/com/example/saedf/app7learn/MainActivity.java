@@ -50,5 +50,6 @@ private AppFeatureAdapter appFeatureAdapter;
         recyclerView.setAdapter(appFeatureAdapter);
         appFeatureAdapter.setAppFeature(FeatureDataFakeGenerator.getAppFeatures(this));
 
+
     }
 }

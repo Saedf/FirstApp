@@ -17,6 +17,7 @@ public class AppFeature {
     private Class DestinationActivity;
 
     public int getId() {
+
         return id;
     }
 

@@ -40,6 +40,7 @@ public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.ap
     @Override
     public void onBindViewHolder(@NonNull appFeatureViewHolder holder, int position) {
         holder.bindFeatures(appFeatureList.get(position));
+
     }
 
     @Override
