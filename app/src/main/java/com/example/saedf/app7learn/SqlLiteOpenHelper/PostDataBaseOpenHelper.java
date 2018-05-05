@@ -53,6 +53,7 @@ public class PostDataBaseOpenHelper extends SQLiteOpenHelper {
     }
     public Boolean addPostToDB(Post post){
         ContentValues contentValues=new ContentValues();
+
         contentValues.put(COL_TITLE,post.getTitle());
         contentValues.put(COL_CONTENT,post.getContent());
         contentValues.put(COL_POST_IMAGE_URL,post.getImagenewsUrl());

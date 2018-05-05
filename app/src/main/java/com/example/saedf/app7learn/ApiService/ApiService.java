@@ -84,7 +84,7 @@ public class ApiService {
 
     public void getPosts(final OnRecivedNews onRecivedNews) {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET,
-                "http://192.168.1.102:8080/7learn/getNewsPost.php", null,
+                "http://172.20.200.45:8012/7learn/getposts.php", null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -109,6 +109,7 @@ public class ApiService {
             Post post = new Post();
             try {
                 JSONObject jsonObject = response.getJSONObject(i);
+                post.setId(jsonObject.getInt("id"));
                 post.setTitle(jsonObject.getString("title"));
                 post.setContent(jsonObject.getString("content"));
                 post.setDate(jsonObject.getString("dateNews"));

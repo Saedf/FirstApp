@@ -3,6 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="is_visited">@android:color/white</color>
-    <color name="is_not_visited">@android:color/darker_gray</color>
+    <color name="is_visited">#b3e5fc</color>
+    <color name="is_not_visited">#eeeeee</color>
 </resources>
