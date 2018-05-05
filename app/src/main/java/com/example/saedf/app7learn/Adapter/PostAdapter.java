@@ -22,7 +22,7 @@ import java.util.List;
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
     private Context context;
     private List<Post> postList;
-    private static final String IP_ADDRESS_SERVER = "192.168.1.102";
+    private static final String IP_ADDRESS_SERVER = "172.20.200.45";
 
     public PostAdapter(Context context, List<Post> postList) {
         this.context = context;
