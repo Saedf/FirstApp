@@ -40,6 +40,7 @@ private AppFeatureAdapter appFeatureAdapter;
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
+
     }
 
     private void setupRecyclerView() {
