@@ -4,5 +4,5 @@
     <color name="colorPrimaryDark">#43965b</color>
     <color name="colorAccent">#607d8b</color>
     <color name="is_visited">#b3e5fc</color>
-    <color name="is_not_visited">#eeeeee</color>
+    <color name="is_not_visited">#ffffff</color>
 </resources>
