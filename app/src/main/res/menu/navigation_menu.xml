@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/navigation_menu_main_activity"
-        android:title="صفحه اصلی"/>
+                android:title="صفحه اصلی"/>
 
 </menu>

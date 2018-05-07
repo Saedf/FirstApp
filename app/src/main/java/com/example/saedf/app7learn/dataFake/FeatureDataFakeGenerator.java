@@ -39,6 +39,7 @@ public class FeatureDataFakeGenerator {
         appFeature.setDestinationActivity(BotickActivity.class);
         appFeatureList.add(appFeature);
 
+
         appFeature = new AppFeature();
         appFeature.setId(AppFeature.ID_MUSIC);
         appFeature.setTitle("News Actvity");
