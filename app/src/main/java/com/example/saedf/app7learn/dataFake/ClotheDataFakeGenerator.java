@@ -14,7 +14,7 @@ public class ClotheDataFakeGenerator {
         List<Clothe> clotheList=new ArrayList<>();
         for (int i = 1; i <=8; i++) {
             Clothe clothe=new Clothe();
-            clothe.setTitleClothe("لباس فروشگاهی دیجی کالا");
+            clothe.setTitleClothe("لباس");
             clothe.setViewCountclothe(700+i);
            switch (i){
                case 1:

@@ -30,7 +30,7 @@
             android:layout_marginRight="@dimen/standard_margin"
             android:fontFamily="@font/iranian_sans"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/large_font_size"
+            android:textSize="@dimen/small_font_size"
             tools:text="عنوان لباس" />
 
         <TextView
@@ -41,7 +41,7 @@
             android:layout_below="@id/tv_layoutClothe_titleClothe"
             android:layout_marginRight="@dimen/standard_margin"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/normal_font_size"
+            android:textSize="@dimen/small_font_size"
             tools:text="750" />
 
         <ImageView
