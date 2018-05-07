@@ -20,7 +20,8 @@ import java.util.List;
 public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.appFeatureViewHolder> {
     private Context context;
     private List<AppFeature> appFeatureList = new ArrayList<>();
-
+private static final int VIEW_TYPE_HEADER=0;
+private static final int VIEW_TYPE_DEFAULT_ITEM=1;
     public AppFeatureAdapter(Context context) {
         this.context = context;
     }
@@ -33,6 +34,10 @@ public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.ap
     @NonNull
     @Override
     public appFeatureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        switch (viewType){
+            case VIEW_TYPE_HEADER:
+                //View  view=LayoutInflater.from(context).inflate()
+        }
         View view = LayoutInflater.from(context).inflate(R.layout.layout_app_feature, parent, false);
         return new appFeatureViewHolder(view);
     }
@@ -48,6 +53,14 @@ public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.ap
         return appFeatureList.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        if (position==0){
+            return VIEW_TYPE_HEADER;
+        }else {
+            return VIEW_TYPE_DEFAULT_ITEM;
+        }
+    }
 
     public class appFeatureViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
@@ -68,6 +81,13 @@ public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.ap
                     itemView.getContext().startActivity(new Intent(itemView.getContext(), appFeature.getDestinationActivity()));
                 }
             });
+        }
+    }
+    public static class AppFeatureBanner extends  RecyclerView.ViewHolder{
+private TextView tvAppFeatureLAble;
+        public AppFeatureBanner(View itemView) {
+            super(itemView);
+            tvAppFeatureLAble=itemView.findViewById(R.id.tv_app_feature_list);
         }
     }
 }
