@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/navigation_menu_main_activity"
-                android:title="صفحه اصلی"/>
-
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_menu_main_activity"
+            android:title="صفحه اصلی" />
+        <item
+            android:id="@+id/navigation_menu_profile"
+            android:icon="@mipmap/default_avatar"
+            android:title="پروفایل" />
+        <item
+            android:id="@+id/navigation_menu_store"
+            android:title="فروشگاه" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_menu_contact_us"
+            android:title="ارتباط با ما" />
+        <item
+            android:id="@+id/navigation_menu_settings"
+            android:title="تنظیمات"  />
+    </group>
 </menu>

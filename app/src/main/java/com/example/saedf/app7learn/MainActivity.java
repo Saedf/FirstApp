@@ -1,7 +1,11 @@
 package com.example.saedf.app7learn;
 
+import android.content.Intent;
 import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -11,12 +15,16 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.saedf.app7learn.Adapter.AppFeatureAdapter;
 import com.example.saedf.app7learn.dataFake.FeatureDataFakeGenerator;
 
 public class MainActivity extends AppCompatActivity {
 private AppFeatureAdapter appFeatureAdapter;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +37,33 @@ private AppFeatureAdapter appFeatureAdapter;
     private void setupView() {
         setupRecyclerView();
         setupToolbar();
+        setupNavigationView();
 
+        FloatingActionButton floatingActionButton=findViewById(R.id.float_action_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Float Action Button is Click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void setupNavigationView() {
+        NavigationView navigationView=findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.navigation_menu_profile:startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                    break;
+                    case  R.id.navigation_menu_store:startActivity(new Intent(MainActivity.this,BotickActivity.class));
+                    break;
+
+                }
+                return true;
+            }
+        });
     }
 
 
