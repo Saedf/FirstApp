@@ -21,7 +21,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".BotickActivity" />
+        <activity android:name=".BotickActivity" android:label="بوتیک" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".AppWeatherActivity" />
         <activity android:name=".PostActivity">
