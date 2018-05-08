@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"
+            android:windowSoftInputMode="stateHidden"
+            android:label="اطلاعات کاربری"
+            />
         <activity android:name=".NewsActivity" />
         <activity android:name=".FragmentActivity" />
         <activity android:name=".BotickActivity" android:label="بوتیک" />

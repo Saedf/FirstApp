@@ -2,6 +2,7 @@ package com.example.saedf.app7learn;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -39,12 +40,12 @@ public class ProfileActivity extends AppCompatActivity {
         getinfoUser();
 
 
-        imgbtnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+//        imgbtnBack.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                finish();
+//            }
+//        });
 
 
         txtFirstName.addTextChangedListener(new TextWatcher() {
@@ -123,7 +124,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-
+        setupToolBar();
     }
 
     private void getinfoUser() {
@@ -133,11 +134,10 @@ public class ProfileActivity extends AppCompatActivity {
         chkIsHtmlExpert.setChecked(user.isHtmlExpert());
         chkIsCssExpert.setChecked(user.isCSSExpert());
         chkIsJavaExpert.setChecked(user.isJavaExpert());
-        byte gender=user.getGender();
-        if (gender==User.MALE){
+        byte gender = user.getGender();
+        if (gender == User.MALE) {
             rdbMale.isChecked();
-        }
-        else {
+        } else {
             rdbFemale.isChecked();
         }
     }
@@ -148,8 +148,21 @@ public class ProfileActivity extends AppCompatActivity {
         chkIsJavaExpert = findViewById(R.id.checkbox_profileactivity_isJava);
         chkIsCssExpert = findViewById(R.id.checkbox_profileactivity_isCSS);
         chkIsHtmlExpert = findViewById(R.id.checkbox_profileactivity_isHTML);
-        imgbtnBack = findViewById(R.id.imgbtn_profileActivity_buttonBack);
+        //imgbtnBack = findViewById(R.id.imgbtn_profileActivity_buttonBack);
         rdbFemale = findViewById(R.id.rdb_profielActivity_female);
         rdbMale = findViewById(R.id.rdb_profielActivity_male);
+    }
+
+    private void setupToolBar() {
+        Toolbar toolbar = findViewById(R.id.toolbar_profilaActivity);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

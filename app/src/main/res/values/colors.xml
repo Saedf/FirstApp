@@ -5,4 +5,9 @@
     <color name="colorAccent">#607d8b</color>
     <color name="is_visited">#b3e5fc</color>
     <color name="is_not_visited">#ffffff</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_orang">#ffc71c</color>
+    <color name="color_orange_dark">#f89406</color>
+    <color name="color_blue">#1bbc9b</color>
+    <color name="color_blue_dark">#aa1bbc9b</color>
 </resources>
