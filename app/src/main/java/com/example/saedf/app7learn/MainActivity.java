@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -31,6 +33,8 @@ private AppFeatureAdapter appFeatureAdapter;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setupView();
+
+
     }
 
 
@@ -38,12 +42,19 @@ private AppFeatureAdapter appFeatureAdapter;
         setupRecyclerView();
         setupToolbar();
         setupNavigationView();
-
+        final CoordinatorLayout coordinatorLayout=findViewById(R.id.coordinator_layout);
         FloatingActionButton floatingActionButton=findViewById(R.id.float_action_button);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Float Action Button is Click", Toast.LENGTH_SHORT).show();
+                Snackbar.make(coordinatorLayout,"Float Action Button Clicked",Snackbar.LENGTH_LONG)
+                        .setAction("Retry", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(MainActivity.this, "Retry Button Click", Toast.LENGTH_LONG).show();
+                            }
+                        }).show();
+               // Toast.makeText(MainActivity.this, "Float Action Button is Click", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -86,7 +97,18 @@ private AppFeatureAdapter appFeatureAdapter;
 
     private void setupRecyclerView() {
         RecyclerView recyclerView=findViewById(R.id.recycler_view_mainactivity);
-        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        GridLayoutManager  gridLayoutManager=new GridLayoutManager(this,2);
+        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+                if (position==0){
+                    return 2;
+                }else {
+                    return 1;
+                }
+            }
+        });
+        recyclerView.setLayoutManager(gridLayoutManager);
         appFeatureAdapter=new AppFeatureAdapter(this);
         recyclerView.setAdapter(appFeatureAdapter);
         appFeatureAdapter.setAppFeature(FeatureDataFakeGenerator.getAppFeatures(this));
