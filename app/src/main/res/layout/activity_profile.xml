@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             app:contentScrim="@color/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="false">
+            app:titleEnabled="false">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -35,11 +35,16 @@
                 <Button
                     android:id="@+id/btn_profileAcivity_changePicture"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="35dp"
+                    android:textSize="@dimen/normal_font_size_dp"
+                    android:background="@drawable/selector_orang_button"
+                    android:textColor="@android:color/black"
+                    android:foreground="?attr/selectableItemBackground"
                     android:layout_alignBottom="@id/iv_profileActivity_backgroundImage"
                     android:layout_alignRight="@id/iv_profileActivity_backgroundImage"
                     android:layout_marginRight="@dimen/standard_margin"
                     android:layout_marginTop="@dimen/standard_margin"
+                    android:layout_marginBottom="@dimen/standard_margin_x2"
                     android:fontFamily="@font/iranian_sans"
                     android:text="تغییر عکس" />
 
@@ -54,8 +59,10 @@
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_profilaActivity"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+
                 app:layout_collapseMode="pin">
 
 
@@ -96,6 +103,8 @@
                 android:layout_marginLeft="@dimen/standard_margin"
                 android:layout_marginRight="@dimen/standard_margin"
                 android:fontFamily="@font/iranian_sans_light"
+                android:background="@drawable/selector_defualt_edit_text"
+                android:padding="@dimen/standard_margin"
                 android:hint="نام خود را وارد نمائید"
                 android:maxLength="20"
                 android:maxLines="1"
@@ -108,6 +117,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/standard_margin"
                 android:layout_marginRight="@dimen/standard_margin"
+                android:background="@drawable/selector_defualt_edit_text"
+                android:padding="@dimen/standard_margin"
                 android:fontFamily="@font/iranian_sans"
                 android:hint="نام خانوادگی خود را وارد نمائید"
                 android:maxLength="30"
@@ -194,8 +205,11 @@
                 android:id="@+id/btn_profileAcivity_sabtInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/select_blue_button"
                 android:layout_marginLeft="@dimen/standard_margin"
                 android:layout_marginRight="@dimen/standard_margin"
+                android:textColor="@android:color/white"
+                android:foreground="?attr/selectableItemBackground"
                 android:text="ثبت اطلاعات" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
