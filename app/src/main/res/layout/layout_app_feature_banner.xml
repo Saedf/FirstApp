@@ -25,8 +25,8 @@
                 android:layout_height="32dp"
                 android:layout_alignParentRight="true"
                 app:srcCompat="@drawable/ic_app_feature_list"
-                tools:ignore="VectorDrawableCompat"
-                />
+
+                tools:ignore="VectorDrawableCompat" />
             <TextView
                 android:id="@+id/tv_app_feature_list"
                 android:layout_width="wrap_content"

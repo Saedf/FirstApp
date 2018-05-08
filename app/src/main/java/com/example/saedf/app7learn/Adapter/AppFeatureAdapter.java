@@ -17,11 +17,12 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AppFeatureAdapter extends RecyclerView.Adapter<AppFeatureAdapter.appFeatureViewHolder> {
+public class AppFeatureAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<AppFeature> appFeatureList = new ArrayList<>();
-private static final int VIEW_TYPE_HEADER=0;
-private static final int VIEW_TYPE_DEFAULT_ITEM=1;
+    private static final int VIEW_TYPE_HEADER = 0;
+    private static final int VIEW_TYPE_DEFAULT_ITEM = 1;
+
     public AppFeatureAdapter(Context context) {
         this.context = context;
     }
@@ -33,31 +34,39 @@ private static final int VIEW_TYPE_DEFAULT_ITEM=1;
 
     @NonNull
     @Override
-    public appFeatureViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        switch (viewType){
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        switch (viewType) {
             case VIEW_TYPE_HEADER:
-                //View  view=LayoutInflater.from(context).inflate()
+                View view = LayoutInflater.from(context).inflate(R.layout.layout_app_feature_banner, parent, false);
+                return new AppFeatureBanner(view);
+            case VIEW_TYPE_DEFAULT_ITEM:
+                return new appFeatureViewHolder(LayoutInflater.from(context).inflate(R.layout.layout_app_feature, parent, false));
+            default:
+                return null;
+
         }
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_app_feature, parent, false);
-        return new appFeatureViewHolder(view);
+
     }
 
     @Override
-    public void onBindViewHolder(@NonNull appFeatureViewHolder holder, int position) {
-        holder.bindFeatures(appFeatureList.get(position));
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        if (holder instanceof appFeatureViewHolder){
+            appFeatureViewHolder viewHolder= (appFeatureViewHolder) holder;
+            viewHolder.bindFeatures(appFeatureList.get(position-1));
+        }
 
     }
 
     @Override
     public int getItemCount() {
-        return appFeatureList.size();
+        return appFeatureList.size()+1;
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position==0){
+        if (position == 0) {
             return VIEW_TYPE_HEADER;
-        }else {
+        } else {
             return VIEW_TYPE_DEFAULT_ITEM;
         }
     }
@@ -83,11 +92,13 @@ private static final int VIEW_TYPE_DEFAULT_ITEM=1;
             });
         }
     }
-    public static class AppFeatureBanner extends  RecyclerView.ViewHolder{
-private TextView tvAppFeatureLAble;
+
+    public static class AppFeatureBanner extends RecyclerView.ViewHolder {
+        private TextView tvAppFeatureLAble;
+
         public AppFeatureBanner(View itemView) {
             super(itemView);
-            tvAppFeatureLAble=itemView.findViewById(R.id.tv_app_feature_list);
+            tvAppFeatureLAble = itemView.findViewById(R.id.tv_app_feature_list);
         }
     }
 }
