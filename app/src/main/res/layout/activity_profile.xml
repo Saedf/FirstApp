@@ -1,186 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="rtl"
     tools:context=".ProfileActivity">
 
-    <ImageView
-        android:id="@+id/iv_profileActivity_backgroundImage"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/form_background" />
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv_profileActivity_informationUser"
-            android:layout_width="wrap_content"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/standard_margin"
-            android:layout_marginTop="@dimen/standard_margin"
-            android:fontFamily="@font/iranian_sans"
-            android:text="اطلاعات کاربری"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/large_font_size" />
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="false">
 
-        <ImageButton
-            android:id="@+id/imgbtn_profileActivity_buttonBack"
-            android:layout_width="@dimen/action_button_size"
-            android:layout_height="@dimen/action_button_size"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/standard_margin"
-            android:layout_marginTop="@dimen/standard_margin"
-            android:background="@null"
-            android:src="@drawable/ic_action_back_white" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="parallax">
 
-    </RelativeLayout>
-    <Button
-        android:id="@+id/btn_profileAcivity_changePicture"
-        android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/iv_profileActivity_backgroundImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/form_background" />
+
+                <Button
+                    android:id="@+id/btn_profileAcivity_changePicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/iv_profileActivity_backgroundImage"
+                    android:layout_alignRight="@id/iv_profileActivity_backgroundImage"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:layout_marginTop="@dimen/standard_margin"
+                    android:fontFamily="@font/iranian_sans"
+                    android:text="تغییر عکس" />
+
+                <ImageView
+                    android:id="@+id/iv_profielActivity_imageUser"
+                    android:layout_width="0dp"
+                    android:layout_height="62dp"
+                    android:layout_above="@id/btn_profileAcivity_changePicture"
+                    android:layout_alignLeft="@id/btn_profileAcivity_changePicture"
+                    android:layout_alignRight="@id/btn_profileAcivity_changePicture"
+                    android:src="@mipmap/default_avatar" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/iv_profileActivity_backgroundImage"
-        android:layout_alignRight="@id/iv_profileActivity_backgroundImage"
-        android:layout_marginRight="@dimen/standard_margin"
-        android:layout_marginTop="@dimen/standard_margin"
-        android:fontFamily="@font/iranian_sans"
-        android:text="تغییر عکس"/>
-    <ImageView
-        android:id="@+id/iv_profielActivity_imageUser"
-        android:layout_width="0dp"
-        android:layout_height="62dp"
-        android:layout_above="@id/btn_profileAcivity_changePicture"
-        android:layout_alignLeft="@id/btn_profileAcivity_changePicture"
-        android:layout_alignRight="@id/btn_profileAcivity_changePicture"
-        android:src="@mipmap/default_avatar"/>
-  <ScrollView
-      android:id="@+id/scrolview_profileActicity"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_below="@id/iv_profileActivity_backgroundImage">
-      <LinearLayout
-          android:id="@+id/ll_profileActivity"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_below="@id/scrolview_profileActicity"
-          android:padding="@dimen/standard_margin_x2"
-          android:orientation="vertical">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_gravity="right"
-              android:text="اطلاعات فردی"
-              android:textColor="@android:color/black"
-              android:fontFamily="@font/iranian_sans"
-              android:layout_marginBottom="@dimen/standard_margin"
-              android:textSize="@dimen/normal_font_size"/>
-          <EditText
-              android:id="@+id/editText_profileActivity_firstname"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:fontFamily="@font/iranian_sans_light"
-              android:textSize="@dimen/normal_font_size"
-              android:layout_marginBottom="@dimen/standard_margin"
-              android:layout_marginRight="@dimen/standard_margin"
-              android:layout_marginLeft="@dimen/standard_margin"
-              android:hint="نام خود را وارد نمائید"
-              android:textAlignment="center"
-              android:maxLength="20"
-              android:maxLines="1"/>
-          <EditText
-              android:id="@+id/editText_profileActivity_Lastname"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="@dimen/standard_margin"
-              android:layout_marginRight="@dimen/standard_margin"
-              android:hint="نام خانوادگی خود را وارد نمائید"
-              android:fontFamily="@font/iranian_sans"
-              android:textAlignment="center"
-              android:maxLength="30"
-              android:maxLines="1"
-              android:textSize="@dimen/normal_font_size"/>
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="تخصص ها"
-              android:layout_gravity="right"
-              android:layout_marginTop="@dimen/standard_margin"
-              android:textColor="@android:color/black"
-              android:fontFamily="@font/iranian_sans"
-              android:layout_marginBottom="@dimen/standard_margin"/>
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center"
-              android:orientation="horizontal">
-              <CheckBox
-                  android:id="@+id/checkbox_profileactivity_isJava"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginRight="@dimen/standard_margin"
-                  android:text="JAVA"/>
-              <CheckBox
-                  android:id="@+id/checkbox_profileactivity_isCSS"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginRight="@dimen/standard_margin"
-                  android:text="CSS"/>
-              <CheckBox
-                  android:id="@+id/checkbox_profileactivity_isHTML"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginRight="@dimen/standard_margin"
-                  android:text="HTML"/>
-          </LinearLayout>
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="جنسیت"
-              android:layout_gravity="right"
-              android:fontFamily="@font/iranian_sans"
-              android:textColor="@android:color/black"
-              android:layout_marginBottom="@dimen/standard_margin"
-              android:layout_marginTop="@dimen/standard_margin"
-              android:textSize="@dimen/normal_font_size"/>
-          <RadioGroup
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginBottom="@dimen/standard_margin"
-              android:gravity="center"
-              android:orientation="horizontal">
-              <RadioButton
-                  android:id="@+id/rdb_profielActivity_female"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:fontFamily="@font/iranian_sans"
-                  android:layout_marginRight="@dimen/standard_margin"
-                  android:text="زن"/>
-              <RadioButton
-                  android:id="@+id/rdb_profielActivity_male"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:checked="true"
-                  android:fontFamily="@font/iranian_sans"
-                  android:layout_marginRight="@dimen/standard_margin"
-                  android:text="مرد"/>
+        android:layout_below="@id/iv_profileActivity_backgroundImage"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-          </RadioGroup>
-          <Button
-              android:id="@+id/btn_profileAcivity_sabtInfo"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:layout_marginLeft="@dimen/standard_margin"
-              android:layout_marginRight="@dimen/standard_margin"
-              android:text="ثبت اطلاعات"/>
-      </LinearLayout>
-  </ScrollView>
+        <LinearLayout
+            android:id="@+id/ll_profileActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/standard_margin_x2">
 
-</RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans"
+                android:text="اطلاعات فردی"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/normal_font_size" />
+
+            <EditText
+                android:id="@+id/editText_profileActivity_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans_light"
+                android:hint="نام خود را وارد نمائید"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/normal_font_size" />
+
+            <EditText
+                android:id="@+id/editText_profileActivity_Lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans"
+                android:hint="نام خانوادگی خود را وارد نمائید"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textSize="@dimen/normal_font_size" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans"
+                android:text="تخصص ها"
+                android:textColor="@android:color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox_profileactivity_isJava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:text="JAVA" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_profileactivity_isCSS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:text="CSS" />
+
+                <CheckBox
+                    android:id="@+id/checkbox_profileactivity_isHTML"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:text="HTML" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:layout_marginTop="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans"
+                android:text="جنسیت"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/normal_font_size" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rdb_profielActivity_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:fontFamily="@font/iranian_sans"
+                    android:text="زن" />
+
+                <RadioButton
+                    android:id="@+id/rdb_profielActivity_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/standard_margin"
+                    android:checked="true"
+                    android:fontFamily="@font/iranian_sans"
+                    android:text="مرد" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_profileAcivity_sabtInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/standard_margin"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:text="ثبت اطلاعات" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
