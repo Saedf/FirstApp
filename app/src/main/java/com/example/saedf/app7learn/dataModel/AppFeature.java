@@ -9,6 +9,11 @@ public class AppFeature {
     public static final int ID_MUSIC=3;
     public static final int ID_VIDEO=4;
     public static final int ID_LOGIN=5;
+    public static final int ID_ANIMATIONS=6;
+
+    public static int getIdAnimations() {
+        return ID_ANIMATIONS;
+    }
 
     private int id;
     private String title;

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">App7learn</string>
+    <string name="app_feature_animation_in_android">انیمیشن در اندروید</string>
+    <string name="animatons_alpha">Alpha</string>
+    <string name="animations_translate">Translate</string>
+    <string name="animations_scale">Scale</string>
+    <string name="animations_rotate">Rotate</string>
+    <string name="animations_value_animatior">Vakue Animator</string>
+    <string name="animations_lable_list_of_animations">لیست انیمیشن ها در اندروید</string>
+    <string name="animations_main_activity_toolbar_title">انیمیشن در اندروید</string>
+
 </resources>
