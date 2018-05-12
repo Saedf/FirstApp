@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark">
         <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_animation_main_activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -45,6 +46,13 @@
                 android:tag="1"
                 style="@style/animations_button_accent"/>
             <Button
+                android:id="@+id/button_scale_animation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/animations_scale"
+                android:tag="2"
+                style="@style/animations_button_primary"/>
+            <Button
                 android:id="@+id/button_rotate_animation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,12 +61,26 @@
                 style="@style/animations_button_accent"/>
 
             <Button
-                android:id="@+id/button_value_main"
+                android:id="@+id/button_value_animator"
                 style="@style/animations_button_primary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:tag="4"
                 android:text="@string/animations_value_animatior" />
+            <Button
+                android:id="@+id/button_animation_set"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/animations_animation_set"
+                android:tag="5"
+                style="@style/animations_button_accent"/>
+            <Button
+                android:id="@+id/button_yoyo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/animations_yoyo"
+                android:tag="6"
+                style="@style/animations_button_primary"/>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
