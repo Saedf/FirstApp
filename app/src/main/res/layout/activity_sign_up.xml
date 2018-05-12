@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edittext_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="نام" />
+
+        <EditText
+            android:id="@+id/edittext_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="نام خانوادگی" />
+
+        <EditText
+            android:id="@+id/edittext_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="سن" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:fontFamily="@font/iranian_sans"
+            android:text="تخصص ها"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_signup_isJava"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:text="JAVA" />
+
+            <CheckBox
+                android:id="@+id/checkbox_signup_isCSS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:text="CSS" />
+
+            <CheckBox
+                android:id="@+id/checkbox_signup_isHTML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:text="HTML" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:fontFamily="@font/iranian_sans"
+            android:text="جنسیت"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_font_size" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rdb_signup_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:fontFamily="@font/iranian_sans"
+                android:text="زن" />
+
+            <RadioButton
+                android:id="@+id/rdb_signup_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/standard_margin"
+                android:checked="true"
+                android:fontFamily="@font/iranian_sans"
+                android:text="مرد" />
+        </RadioGroup>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/has_job_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="شاغل"
+            app:switchPadding="@dimen/standard_margin" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_signup_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="ثبت نام"/>
+</RelativeLayout>
