@@ -123,6 +123,32 @@ public class ApiService {
         return postList;
 
     }
+    public void signUpUser(JSONObject requestJsonObject, final OnSignupComplete onSignupComplete){
+        final JsonObjectRequest request=new JsonObjectRequest(Request.Method.POST,
+                "http://172.20.200.45/7learn/SaveUser.php", requestJsonObject,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            boolean success=response.getBoolean("success");
+                            onSignupComplete.onSignUp(success);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                onSignupComplete.onSignUp(false);
+            }
+        });
+        request.setRetryPolicy(new DefaultRetryPolicy(800,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_TIMEOUT_MS));
+        Volley.newRequestQueue(context).add(request);
+    }
+    public interface OnSignupComplete{
+        void onSignUp(boolean success);
+    }
 
     public interface OnRecivedNews {
         void onrecived(List<Post> postList);
