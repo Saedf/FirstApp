@@ -33,7 +33,8 @@
         <activity android:name=".ViewPostActivity" />
         <activity android:name=".PostWithAsyncTaskActivity" />
         <activity android:name=".animation.AnimationActivity" />
-        <activity android:name=".animation.AnimationMain"></activity>
+        <activity android:name=".animation.AnimationMain" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>
