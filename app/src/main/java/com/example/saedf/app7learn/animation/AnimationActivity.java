@@ -23,6 +23,8 @@ import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.saedf.app7learn.R;
 
 public class AnimationActivity extends AppCompatActivity {
@@ -91,9 +93,9 @@ public class AnimationActivity extends AppCompatActivity {
     }
 
     private void showYoyoAnimation() {
-//        YoYo.with(Techniques.Shake)
-//                .duration(1000)
-//                .playOn(kouroshImage);
+        YoYo.with(Techniques.Shake)
+                .duration(1000)
+                .playOn(koroushImage);
     }
 
     private void showAnimationSet() {
