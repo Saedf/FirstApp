@@ -11,29 +11,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity"
-            android:windowSoftInputMode="stateHidden"
+        <activity
+            android:name=".ProfileActivity"
             android:label="اطلاعات کاربری"
-            />
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".NewsActivity" />
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".BotickActivity" android:label="بوتیک" />
+        <activity
+            android:name=".BotickActivity"
+            android:label="بوتیک" />
         <activity android:name=".WeatherActivity" />
         <activity android:name=".AppWeatherActivity" />
-        <activity android:name=".PostActivity">
-
-        </activity>
+        <activity android:name=".PostActivity" />
         <activity android:name=".ViewPostActivity" />
-        <activity android:name=".PostWithAsyncTaskActivity">
-
-        </activity>
+        <activity android:name=".PostWithAsyncTaskActivity" />
+        <activity android:name=".animation.AnimationActivity" />
+        <activity android:name=".animation.AnimationMain"></activity>
     </application>
 
 </manifest>

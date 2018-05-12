@@ -9,6 +9,8 @@ import com.example.saedf.app7learn.NewsActivity;
 import com.example.saedf.app7learn.PostActivity;
 import com.example.saedf.app7learn.ProfileActivity;
 import com.example.saedf.app7learn.R;
+import com.example.saedf.app7learn.animation.AnimationActivity;
+import com.example.saedf.app7learn.animation.AnimationMain;
 import com.example.saedf.app7learn.dataModel.AppFeature;
 
 import java.util.ArrayList;
@@ -61,6 +63,14 @@ public class FeatureDataFakeGenerator {
         appFeature.setFeatureImage(R.mipmap.login);
         appFeature.setDestinationActivity(MainActivity.class);
         appFeatureList.add(appFeature);
+
+        appFeature = new AppFeature();
+        appFeature.setId(AppFeature.ID_ANIMATIONS);
+        appFeature.setTitle(context.getString(R.string.app_feature_animation_in_android));
+        appFeature.setFeatureImage(R.mipmap.animations_in_android);
+        appFeature.setDestinationActivity(AnimationMain.class);
+        appFeatureList.add(appFeature);
+
 
         return appFeatureList;
 

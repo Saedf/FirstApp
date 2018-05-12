@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/frame_layout_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".animation.AnimationActivity">
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/switch_from_xml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:switchPadding="@dimen/standard_margin"
+        android:text="بارگزاری انیمیشن از xml"/>
+    <ImageView
+        android:id="@+id/image_kourosh"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:src="@mipmap/funny_boy"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="شروع"
+        style="@style/button_primary_style"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>
