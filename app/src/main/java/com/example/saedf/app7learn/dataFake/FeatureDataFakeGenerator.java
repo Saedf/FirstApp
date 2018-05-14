@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.saedf.app7learn.AppWeatherActivity;
 import com.example.saedf.app7learn.BotickActivity;
 import com.example.saedf.app7learn.MainActivity;
+import com.example.saedf.app7learn.MusicPlayerActivity;
 import com.example.saedf.app7learn.NewsActivity;
 import com.example.saedf.app7learn.PostActivity;
 import com.example.saedf.app7learn.ProfileActivity;
@@ -45,9 +46,9 @@ public class FeatureDataFakeGenerator {
 
         appFeature = new AppFeature();
         appFeature.setId(AppFeature.ID_MUSIC);
-        appFeature.setTitle("News Actvity");
+        appFeature.setTitle("Music Player");
         appFeature.setFeatureImage(R.mipmap.music_player);
-        appFeature.setDestinationActivity(NewsActivity.class);
+        appFeature.setDestinationActivity(MusicPlayerActivity.class);
         appFeatureList.add(appFeature);
 
         appFeature = new AppFeature();
