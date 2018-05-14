@@ -34,7 +34,8 @@
         <activity android:name=".PostWithAsyncTaskActivity" />
         <activity android:name=".animation.AnimationActivity" />
         <activity android:name=".animation.AnimationMain" />
-        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MusicPlayerActivity"></activity>
     </application>
 
 </manifest>
