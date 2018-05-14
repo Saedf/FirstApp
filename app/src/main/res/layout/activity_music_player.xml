@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MusicPlayerActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/music_player_background"
+        android:scaleType="centerCrop"/>
+    <RelativeLayout
+        android:id="@+id/toolbar_activity_music_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/standard_margin">
+        <ImageView
+            android:id="@+id/imageview_music"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="@dimen/standard_margin_x2"
+            android:layout_marginRight="@dimen/standard_margin"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_music_player"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageview_music"
+            android:text="7Learn Music Player"
+            android:textColor="@color/color_white"
+            android:layout_centerVertical="true"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            />
 
-</android.support.constraint.ConstraintLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:text="# Tutorial:Using media player in android"
+        android:layout_below="@id/toolbar_activity_music_player"
+        android:gravity="center"/>
+    <SeekBar
+        android:id="@+id/seek_bar_activity_musicPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/music_player_seek_bar_margin"
+        android:layout_marginLeft="@dimen/music_player_seek_bar_margin"
+        android:layout_marginBottom="@dimen/standard_margin"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seek_bar_activity_musicPlayer"
+        android:padding="@dimen/standard_margin_x2">
+        <ImageView
+            android:id="@+id/iv_button_play"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:elevation="2dp"
+            android:padding="14dp"
+            android:src="@mipmap/ic_play"
+            android:layout_centerInParent="true"
+
+            android:background="@drawable/selector_play_button"/>
+        <ImageView
+            android:id="@+id/iv_button_forward"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_button_play"
+            android:layout_marginLeft="@dimen/standard_margin_x2"
+            android:src="@drawable/ic_fast_forward_black_48dp"/>
+        <ImageView
+            android:id="@+id/iv_button_rewind"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_toLeftOf="@id/iv_button_play"
+            android:layout_marginRight="@dimen/standard_margin_x2"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_fast_rewind_black_48dp"/>
+        <TextView
+            android:id="@+id/text_music_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/music_player_dark_gray"
+            tools:text="05:00"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+        <TextView
+            android:id="@+id/text_music_current_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:textColor="@color/music_player_dark_gray"
+            tools:text="00:25"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -12,4 +12,5 @@
     <color name="color_orange_dark">#f89406</color>
     <color name="color_blue">#1bbc9b</color>
     <color name="color_blue_dark">#aa1bbc9b</color>
+    <color name="music_player_dark_gray">#424242</color>
 </resources>
