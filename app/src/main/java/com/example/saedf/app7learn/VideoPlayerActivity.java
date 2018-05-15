@@ -50,7 +50,7 @@ public class VideoPlayerActivity extends AppCompatActivity {
         });
     }
 
-    @SuppressLint("WrongViewCast")
+
     private void setupViews() {
         final ImageView playButton=findViewById(R.id.iv_buttonPlay_video_activity);
         playButton.setOnClickListener(new View.OnClickListener() {
