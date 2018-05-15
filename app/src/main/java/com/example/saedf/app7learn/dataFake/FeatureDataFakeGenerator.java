@@ -11,6 +11,7 @@ import com.example.saedf.app7learn.PostActivity;
 import com.example.saedf.app7learn.ProfileActivity;
 import com.example.saedf.app7learn.R;
 import com.example.saedf.app7learn.SignUpActivity;
+import com.example.saedf.app7learn.VideoPlayerActivity;
 import com.example.saedf.app7learn.animation.AnimationActivity;
 import com.example.saedf.app7learn.animation.AnimationMain;
 import com.example.saedf.app7learn.dataModel.AppFeature;
@@ -53,9 +54,9 @@ public class FeatureDataFakeGenerator {
 
         appFeature = new AppFeature();
         appFeature.setId(AppFeature.ID_VIDEO);
-        appFeature.setTitle("Weather");
+        appFeature.setTitle("Video Player");
         appFeature.setFeatureImage(R.mipmap.video_player);
-        appFeature.setDestinationActivity(AppWeatherActivity.class);
+        appFeature.setDestinationActivity(VideoPlayerActivity.class);
         appFeatureList.add(appFeature);
 
 

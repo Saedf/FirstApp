@@ -35,7 +35,8 @@
         <activity android:name=".animation.AnimationActivity" />
         <activity android:name=".animation.AnimationMain" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".MusicPlayerActivity"></activity>
+        <activity android:name=".MusicPlayerActivity" />
+        <activity android:name=".VideoPlayerActivity"></activity>
     </application>
 
 </manifest>

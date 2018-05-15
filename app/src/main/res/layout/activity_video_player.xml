@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoPlayerActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar_videoplayer_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/standard_margin">
+
+        <ImageView
+            android:id="@+id/image_videoplayer_activity"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/standard_margin_x2"
+            android:layout_marginRight="@dimen/standard_margin"
+            android:padding="@dimen/standard_margin"
+            android:src="@mipmap/ic_video_player" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/image_videoplayer_activity"
+            android:fontFamily="sans-serif"
+            android:text="7Learn Video Player"
+            android:textColor="@color/color_white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+
+    <SeekBar
+        android:id="@+id/seek_bar_activity_videoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/standard_margin"
+        android:layout_marginRight="@dimen/music_player_seek_bar_margin"
+        android:layout_marginLeft="@dimen/music_player_seek_bar_margin"/>
+    <RelativeLayout
+        android:id="@+id/layout_video_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/seek_bar_activity_videoplayer"
+        android:padding="@dimen/standard_margin_x2">
+
+        <ImageView
+            android:id="@+id/iv_buttonPlay_video_activity"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/selector_play_button"
+            android:elevation="2dp"
+            android:padding="14dp"
+            android:src="@mipmap/ic_play" />
+
+        <ImageView
+            android:id="@+id/buttonForward_video_activity"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/standard_margin_x2"
+            android:layout_toRightOf="@+id/iv_buttonPlay_video_activity"
+            android:src="@drawable/ic_fast_forward_black_48dp" />
+
+        <ImageView
+            android:id="@+id/buttonRewind_video_activity"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/standard_margin_x2"
+            android:layout_toLeftOf="@id/iv_buttonPlay_video_activity"
+            android:src="@drawable/ic_fast_rewind_black_48dp" />
+
+        <TextView
+            android:id="@+id/tv_video_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/music_player_dark_gray"
+            android:textSize="16sp"
+            tools:text="05:00" />
+
+        <TextView
+            android:id="@+id/tv_video_current_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/music_player_dark_gray"
+            android:textSize="16sp"
+            tools:text="00:25" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout_root_video_activity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_video_controller"
+        android:layout_below="@id/toolbar_videoplayer_activity">
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" />
+
+    </FrameLayout>
+
+</RelativeLayout>
